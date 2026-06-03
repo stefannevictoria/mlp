@@ -1,0 +1,1 @@
+# Funções de ativação e suas derivadas

@@ -1,0 +1,1 @@
+# SGD Optimizer implementation e outras técnicas de otimização para treinamento do MLP

@@ -1,0 +1,1 @@
+# Cross-entropy Loss implementation e outras funções de perda para classificação
