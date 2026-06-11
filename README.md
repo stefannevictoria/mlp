@@ -54,6 +54,8 @@ A arquitetura `784 → 128 → 64 → 10` foi escolhida após os experimentos re
 
 As duas camadas ocultas atendem ao requisito mínimo da atividade e fornecem capacidade suficiente para aprender os padrões presentes no MNIST. A função ReLU foi utilizada nas camadas ocultas por reduzir problemas de gradientes muito pequenos e acelerar o treinamento. Já a camada de saída utiliza Softmax, permitindo interpretar as saídas da rede como probabilidades para cada uma das 10 classes.
 
+Para inicialização dos pesos foi utilizada a técnica de He initialization, recomendada para redes com ReLU. Ela escala os pesos iniciais por sqrt(2/n),compensando o fato de que a ReLU zera metade dos neurônios e evitando que as ativações encolham camada a camada.
+
 
 ## Resultados
 
@@ -63,7 +65,7 @@ As duas camadas ocultas atendem ao requisito mínimo da atividade e fornecem cap
 | Acurácia de teste  | 97.79%           |
 | Loss final         | 0.0313           |
 
-O modelo superou a meta mínima de 92% de acurácia estabelecida para a atividade.
+O modelo superou a meta mínima de 92% de acurácia estabelecida para a atividade. O melhor modelo alcançou 97.79% de acurácia no conjunto de teste, aproximadamente 5.8 pontos percentuais acima da meta exigida.
 
 ### Experimentos realizados
 
@@ -78,6 +80,13 @@ Três experimentos foram conduzidos para analisar o impacto da arquitetura da re
 Os resultados mostraram que o learning rate teve maior influência sobre a velocidade de convergência e o desempenho final do modelo do que a redução da arquitetura avaliada.
 
 ![Comparação dos experimentos](results/comparacao_experimentos.png)
+
+### Matriz de confusão
+
+![Matriz de confusão](results/confusion_matrix.png)
+
+Os erros mais frequentes ocorreram entre dígitos morfologicamente parecidos:
+5→3 (15 casos), 4→9 (12 casos) e 7→2 (9 casos).
 
 ## Decisões e dificuldades
 
