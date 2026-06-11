@@ -107,11 +107,12 @@ Também implementaria um gradient check numérico para validar os gradientes log
 ├── README.md
 ├── mlp/
 │   ├── __init__.py
-│   ├── activations.py
-│   ├── losses.py
-│   ├── network.py
-│   └── optimizers.py
+│   ├── activations.py    ← funções de ativação e suas derivadas
+│   ├── losses.py         ← cross-entropy e outras
+│   ├── network.py        ← implementação do MLP
+│   └── optimizers.py     ← SGD e opcionais
 ├── notebooks/
+│   ├── xor_test.ipynb
 │   └── experimentos.ipynb
 ├── results/
 └── requirements.txt
